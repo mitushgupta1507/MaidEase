@@ -70,7 +70,7 @@ const AddWorkerModal = ({
     }
 
     try {
-      console.log("START SUBMIT");
+      
 
       setLoading(true);
 
@@ -80,17 +80,17 @@ const AddWorkerModal = ({
         data.append(key, value);
       });
 
-      console.log("FORMDATA");
+      
 
       for (const pair of data.entries()) {
-        console.log(pair[0], pair[1]);
+        
       }
 
-      console.log("CALLING API");
+     
 
       const response = await createWorker(data);
 
-      console.log("SUCCESS", response);
+      
 
       resetForm();
 

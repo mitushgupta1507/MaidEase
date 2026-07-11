@@ -34,9 +34,7 @@ const experienceOptions = [
 ];
 
 const FilterSidebar = ({ filters, setFilters }) => {
-  console.log("setFilters =", setFilters);
-
-  console.log("FILTER SIDEBAR RENDERED");
+  
 
   const resetFilters = () => {
   
@@ -103,7 +101,7 @@ const FilterSidebar = ({ filters, setFilters }) => {
           <div className="space-y-3">
             {serviceTypes.map((item) => (
               <label
-                onClick={() => console.log("LABEL CLICK")}
+                
                 key={item}
                 className="flex cursor-pointer items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 transition hover:border-indigo-500 hover:bg-indigo-50"
               >
@@ -114,9 +112,9 @@ const FilterSidebar = ({ filters, setFilters }) => {
                   name="serviceType"
                   value={item}
                   checked={filters.serviceType === item}
-                  onClick={() => console.log("INPUT CLICKED")}
+                  
                   onChange={(e) => {
-                    console.log("ON CHANGE");
+                    
                     console.log(e.target.value);
 
                     setFilters((prev) => ({
@@ -162,8 +160,7 @@ const FilterSidebar = ({ filters, setFilters }) => {
                         minExperience: item.value,
                       };
 
-                      console.log("New Filters:", updated);
-
+                      
                       return updated;
                     });
                   }}

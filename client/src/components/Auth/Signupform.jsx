@@ -13,7 +13,7 @@ import PasswordInput from "./PasswordInput";
 import SocialLogin from "./SocialLogin";
 
 import { registerUser } from "../../services/authService";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../Context/AuthContext";
 const SignupForm = () => {
   const navigate = useNavigate();
 
@@ -87,7 +87,7 @@ const SignupForm = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          console.log("FORM SUBMITTED");
+          
           handleSubmit(e);
         }}
         className="space-y-6"

@@ -10,7 +10,7 @@ const WorkerGrid = ({ filters, setFilters }) => {
   const fetchWorkers = async () => {
     try {
       setLoading(true);
-      console.log("FILTERS STATE:", JSON.stringify(filters));
+      
       const params = {};
 
       if (filters.search) params.search = filters.search;
@@ -30,8 +30,7 @@ const WorkerGrid = ({ filters, setFilters }) => {
         params.maxPrice = filters.maxPrice;
       if (filters.sort)
         params.sort = filters.sort;
-      console.log("PARAMS SENT:", JSON.stringify(params));
-      console.log(params);
+      
 
       const response = await getWorkers(params);
 
