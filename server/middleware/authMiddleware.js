@@ -28,7 +28,7 @@ export const protect = async (req, res, next) => {
 
     next();
   } catch (error) {
-    console.log("JWT ERROR:", error);
+    
 
     return res.status(401).json({
       success: false,

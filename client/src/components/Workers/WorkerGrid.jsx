@@ -34,7 +34,6 @@ const WorkerGrid = ({ filters, setFilters }) => {
 
       const response = await getWorkers(params);
 
-      console.log("API RESPONSE:", response);
 
       setWorkers(response.data || []);
     } catch (error) {
