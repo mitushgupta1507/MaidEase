@@ -64,25 +64,18 @@ export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    console.log("========== LOGIN DEBUG ==========");
-    console.log("Email Entered:", email);
-    console.log("Password Entered:", password);
+   
 
     const user = await User.findOne({ email });
 
-    console.log("User Found:", !!user);
-
     if (user) {
-      console.log("Database Email:", user.email);
-      console.log("Database Role:", user.role);
+     
 
       const isMatch = await user.matchPassword(password);
 
-      console.log("Password Match:", isMatch);
-
+     
       if (isMatch) {
-        console.log("✅ LOGIN SUCCESS");
-
+        
         return res.status(200).json({
           success: true,
           message: "Login successful",
@@ -99,8 +92,7 @@ export const loginUser = async (req, res) => {
       }
     }
 
-    console.log("❌ LOGIN FAILED");
-
+    
     return res.status(401).json({
       success: false,
       message: "Invalid email or password",

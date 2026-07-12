@@ -131,11 +131,8 @@ export const getWorkers = async (req, res) => {
           createdAt: -1,
         };
     }
-    console.log("REQUEST QUERY:", req.query);
-    console.log("FILTER:", filter);
-
     const totalWorkers = await Worker.countDocuments(filter);
-    console.log("TOTAL:", await Worker.countDocuments({}));
+    
 
     const workers = await Worker.find(filter)
       .sort(sortOption)

@@ -13,7 +13,7 @@ const newPassword = "Admin123";
 const user = await User.findOne({ email });
 
 if (!user) {
-  console.log("User not found");
+ 
   process.exit();
 }
 
@@ -22,7 +22,7 @@ user.password = newPassword;
 
 await user.save();
 
-console.log("✅ Password Reset Successfully");
+
 
 await mongoose.disconnect();
 process.exit();
